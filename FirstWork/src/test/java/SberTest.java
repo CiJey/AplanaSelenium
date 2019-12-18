@@ -94,9 +94,9 @@ public class SberTest {
                 .getAttribute("value"));
         Assert.assertEquals("222222", driver.findElement(By.xpath("//input[@placeholder='Номер']"))
                 .getAttribute("value"));
-        Assert.assertEquals("IVANOV", driver.findElement(By.name("insured0_surname"))
+        Assert.assertEquals("08.08.2008", driver.findElement(By.name("issueDate"))
                 .getAttribute("value"));
-        Assert.assertEquals("IVANOV", driver.findElement(By.name("insured0_surname"))
+        Assert.assertEquals("УФМС России", driver.findElement(By.name("issuePlace"))
                 .getAttribute("value"));
 
         driver.findElement(By.xpath("//span[contains(text(),'Продолжить')]")).click();
