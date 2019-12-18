@@ -3,6 +3,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -45,7 +47,8 @@ public class SberTest {
         Assert.assertEquals("Страхование путешественников",
                 driver.findElement(By.xpath("//h1[contains(text(),'Страхование путешественников')]")).getText());
         driver.findElement(By.xpath("//span[contains(text(),'Оформить онлайн')]/parent::*")).click();
-        driver.findElement(By.xpath("//div//p/a/img")).click();
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click()",
+                driver.findElement(By.xpath("//a[contains(text(),'Оформить сейчас')]")));
 
         String newWindow = (new WebDriverWait(driver, 10))
                 .until((ExpectedCondition<String>) driver -> {
