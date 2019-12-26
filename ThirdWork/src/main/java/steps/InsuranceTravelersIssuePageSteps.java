@@ -32,7 +32,7 @@ public class InsuranceTravelersIssuePageSteps {
     public void checkFillField(String field, String value) {
         String actual = new InsuranceTravelersIssuePage().getFillField(field);
         Assert.assertEquals(String.format("Значение поля [%s] равно [%s]. Ожидалось - [%s]", field, actual, value),
-                actual, value);
+                value, actual);
     }
 
     @Step("Поля заполнены верно")
